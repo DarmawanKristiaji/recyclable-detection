@@ -1,5 +1,5 @@
 """
-Recyclable Object Detection - Streamlit App (Hugging Face Spaces Version)
+Recyclable Object Detection 
 ==========================================================================
 
 YOLOv8s model untuk deteksi objek daur ulang.
@@ -72,7 +72,7 @@ def draw_boxes(image, results, conf_threshold):
 def main():
     # Header
     st.title("♻️ Recyclable Object Detection")
-    st.markdown("**YOLOv8s Model** - Deteksi objek yang dapat didaur ulang")
+    st.markdown("**YOLOv8 Model** - Deteksi objek yang dapat didaur ulang")
     
     # Sidebar
     st.sidebar.header("⚙️ Settings")
