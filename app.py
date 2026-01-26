@@ -1,8 +1,8 @@
 """
-Recyclable Object Detection 
+Recyclable Object Detection - Darmawan Kristiaji
 ==========================================================================
 
-YOLOv8s model untuk deteksi objek daur ulang.
+YOLOv8s model.
 
 Performance:
   - mAP@0.5: 63.4%
@@ -72,7 +72,7 @@ def draw_boxes(image, results, conf_threshold):
 def main():
     # Header
     st.title("♻️ Recyclable Object Detection")
-    st.markdown("**YOLOv8 Model** - Deteksi objek yang dapat didaur ulang")
+    st.markdown("**YOLOv8 Model**")
     
     # Sidebar
     st.sidebar.header("⚙️ Settings")
@@ -83,7 +83,7 @@ def main():
         max_value=0.95,
         value=DEFAULT_CONFIDENCE,
         step=0.05,
-        help="Threshold untuk menampilkan deteksi. Nilai lebih rendah = lebih banyak deteksi."
+        help="Threshold to display detections. Lower value = more detections."
     )
     
     st.sidebar.markdown("---")
@@ -110,13 +110,13 @@ def main():
     with col1:
         st.subheader("📤 Upload Image")
         uploaded_file = st.file_uploader(
-            "Pilih gambar untuk dideteksi",
+            "Select an image to detect",
             type=['jpg', 'jpeg', 'png', 'webp'],
-            help="Format yang didukung: JPG, JPEG, PNG, WEBP"
+            help="Supported formats: JPG, JPEG, PNG, WEBP"
         )
         
         # Sample images option
-        use_sample = st.checkbox("🖼️ Gunakan gambar sampel")
+        use_sample = st.checkbox("🖼️ Use sample images")
         
         sample_path = None
         if use_sample:
@@ -124,7 +124,7 @@ def main():
             if os.path.exists(sample_dir):
                 sample_files = [f for f in os.listdir(sample_dir) if f.endswith(('.jpg', '.jpeg', '.png'))]
                 if sample_files:
-                    selected_sample = st.selectbox("Pilih gambar sampel:", sample_files)
+                    selected_sample = st.selectbox("Select a sample image:", sample_files)
                     sample_path = os.path.join(sample_dir, selected_sample)
     
     # Process image
